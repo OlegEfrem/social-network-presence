@@ -1,7 +1,7 @@
 package com.hooyu.sonep.domain.model
 
 class AdjacencyListTest extends UnitTest {
-  val adjacencyList = AdjacencyList(connections)
+  val adjacencyList = AdjacencyList(connectionData)
 
   "verticesFor should" - {
 
@@ -24,7 +24,7 @@ class AdjacencyListTest extends UnitTest {
     }
 
     "return empty set if no persons are in the graph" in {
-      val graph = AdjacencyList(connections.copy(people = Seq()))
+      val graph = AdjacencyList(connectionData.copy(people = Seq()))
       graph.allPersons shouldBe empty
     }
 
@@ -39,11 +39,11 @@ class AdjacencyListTest extends UnitTest {
     }
 
     "map empty connection people list to empty graph" in {
-      val graph = AdjacencyList(connections.copy(people = Seq()))
+      val graph = AdjacencyList(connectionData.copy(people = Seq()))
       graph.allPersons shouldBe empty
     }
     "map empty connection relationships to empty graph persons relationships" in {
-      val graph = AdjacencyList(connections.copy(relationships = Seq()))
+      val graph = AdjacencyList(connectionData.copy(relationships = Seq()))
       graph.verticesFor(john).value shouldBe empty
     }
   }

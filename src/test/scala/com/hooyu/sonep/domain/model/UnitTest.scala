@@ -18,7 +18,7 @@ trait TestData {
   private val peter_anna                       = relationship(peter, anna)
   val persons: Seq[Person]                     = Seq(john, harry, peter, george, anna)
   private val relationships: Seq[Relationship] = Seq(john_peter, john_george, peter_george, peter_anna)
-  val connections                              = Connections("facebook", persons, relationships)
+  val connectionData                           = ConnectionData("facebook", persons, relationships)
   val relationsHashMap: HashMap[Person, HashSet[Person]] = HashMap(
     john   -> HashSet(peter, george),
     peter  -> HashSet(john, george, anna),
