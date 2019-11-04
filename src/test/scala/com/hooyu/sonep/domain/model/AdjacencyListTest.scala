@@ -14,7 +14,7 @@ class AdjacencyListTest extends UnitTest {
     }
 
     "return empty set if person has no connections" in {
-      adjacencyList.verticesFor(harry).value shouldBe empty
+      adjacencyList.verticesFor(noConnectionPerson).value shouldBe empty
     }
   }
 
